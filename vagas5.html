@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Empregos</title>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("X1v0k5wRDUz8fUZEl");
+    })();
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background-color: #f8f8f8;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+    .menu-button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+    .empresas-section, .cadastro-section, .vagas-section {
+      padding: 40px;
+      background-color: #f0f4f8;
+      width: 100%;
+    }
+    .empresas-section h2, .cadastro-section h2, .vagas-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .empresa, .form-box, .vaga {
+      background-color: white;
+      padding: 20px;
+      margin: 10px auto;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .empresa h3, .vaga h3 {
+      margin-top: 0;
+      color: #003366;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005599;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="menu-button">☰</button>
+    <nav>
+      <ul>
+        <li><a href="#cadastro">Cadastro</a></li>
+        <li><a href="#empresas">Empresas</a></li>
+        <li><a href="#vagas">Vagas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="cadastro-section" id="cadastro">
+    <h2>Cadastro</h2>
+    <form class="form-box" onsubmit="return enviarFormulario(event)">
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefone">Número de telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required>
+
+      <button type="submit">Salvar</button>
+    </form>
+  </section>
+
+  <section class="empresas-section" id="empresas">
+    <h2>Empresas Parceiras</h2>
+
+    <div class="empresa">
+      <h3><a href="#sidia">Sidia</a></h3>
+      <p>Centro de inovação tecnológica com foco em software embarcado e desenvolvimento móvel.</p>
+    </div>
+
+    <div class="empresa">
+      <h3><a href="#sidi">Sidi</a></h3>
+      <p>Instituto voltado para soluções em inteligência artificial, segurança digital e IoT.</p>
+    </div>
+
+    <div class="empresa">
+      <h3><a href="#eldorado">Eldorado</a></h3>
+      <p>Centro de pesquisa com atuação em tecnologias de ponta e soluções inovadoras em software e hardware.</p>
+    </div>
+  </section>
+
+  <section class="vagas-section" id="vagas">
+    <h2>Vagas Disponíveis</h2>
+
+    <div class="vaga">
+      <h3>Desenvolvedor de Software Júnior</h3>
+      <p><strong>Requisitos:</strong> Conhecimento em lógica de programação, HTML, CSS e JavaScript. Desejável conhecimento em versionamento com Git.</p>
+    </div>
+
+    <div class="vaga">
+      <h3>Desenvolvedor Cloud Backend</h3>
+      <p><strong>Requisitos:</strong> Experiência com Node.js, APIs REST, bancos de dados (SQL/NoSQL), e serviços de nuvem (AWS, GCP ou Azure).</p>
+    </div>
+
+    <div class="vaga">
+      <h3>Desenvolvedor Cloud Frontend</h3>
+      <p><strong>Requisitos:</strong> Experiência com React ou Angular, integração com APIs REST, boas práticas de UX/UI, e uso de ferramentas como Figma ou Adobe XD.</p>
+    </div>
+  </section>
+
+  <section class="empresas-section" id="sidia">
+    <div class="empresa">
+      <h3>Sidia</h3>
+      <p><strong>Missão:</strong> Promover inovação com impacto global.</p>
+      <p><strong>Visão:</strong> Ser referência mundial em soluções tecnológicas.</p>
+      <p><strong>Valores:</strong> Inovação, colaboração e excelência.</p>
+    </div>
+  </section>
+
+  <section class="empresas-section" id="sidi">
+    <div class="empresa">
+      <h3>Sidi</h3>
+      <p><strong>Missão:</strong> Transformar conhecimento em soluções digitais.</p>
+      <p><strong>Visão:</strong> Estar entre os maiores centros de P&D do país.</p>
+      <p><strong>Valores:</strong> Ética, inovação e compromisso.</p>
+    </div>
+  </section>
+
+  <section class="empresas-section" id="eldorado">
+    <div class="empresa">
+      <h3>Eldorado</h3>
+      <p><strong>Missão:</strong> Desenvolver tecnologia para melhorar a vida das pessoas.</p>
+      <p><strong>Visão:</strong> Ser reconhecido pela excelência em pesquisa e inovação.</p>
+      <p><strong>Valores:</strong> Qualidade, responsabilidade e criatividade.</p>
+    </div>
+  </section>
+
+  <script>
+    function enviarFormulario(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+
+      const templateParams = {
+        nome: nome,
+        email: email,
+        telefone: telefone,
+        reply_to: email
+      };
+
+      emailjs.send("service_d87uz2p", "template_akprqpt", templateParams)
+        .then(function(response) {
+          alert("Olá, obrigado por se cadastrar no nosso site, estamos com suas informações e em breve lhe retornamos, obrigado.");
+        }, function(error) {
+          alert("Erro ao enviar: " + JSON.stringify(error));
+        });
+    }
+  </script>
+</body>
+</html>
